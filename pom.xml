@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.pferreyra.app</groupId>
-  <artifactId>poc-fe-seleniumls</artifactId>
+  <artifactId>poc-fe-selenium</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>poc-fe-seleniumls</name>
+  <name>poc-fe-selenium</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
