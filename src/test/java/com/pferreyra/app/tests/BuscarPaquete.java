@@ -1,7 +1,7 @@
 package com.pferreyra.app.tests;
 
+import com.pferreyra.app.pages.HomePage;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.pferreyra.app.pages.HomePage;
+
 
 class BuscarPaquete {
 
@@ -30,7 +30,10 @@ class BuscarPaquete {
 
   @Test
   void test() {
-    fail("Not yet implemented");
+	  busquedaPaquete = new HomePage(driver);
+	  busquedaPaquete.ingresarSitio();
+	  String desde = "Buenos Aires";
+	  busquedaPaquete.ingresarOrigen(desde);
   }
 
 }
