@@ -29,7 +29,7 @@ class BuscarPaquete {
   }
 
   @Test
-  void test() {
+  public void test() {
 	  busquedaPaquete = new HomePage(driver);
 	  busquedaPaquete.ingresarSitio();
 	  String desde = "Buenos Aires";
