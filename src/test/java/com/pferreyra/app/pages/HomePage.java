@@ -16,7 +16,7 @@ public class HomePage {
   By fechaVuelta = By.xpath("input[class*='sbox-checkout-date");
   By buscar = By.xpath("//div[@class='sbox-button-horizontal-medium']//em[@class='btn-text']");
   By fechas = By.xpath("//input[contains(@type,'text') and contains(@class,'sbox-checkin-date')]");
-  List<WebElement> calendario = driver.findElements(By.xpath("//span[contains(@class,'_dpmg2--date _dpmg2--available')]"));
+  List<WebElement> calendario = driver.findElements(By.xpath("//span[contains(@class,'_dpmg2--available')]"));
 
   public HomePage (WebDriver driver){
     this.driver = driver;
