@@ -9,13 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.pferreyra.app.pages.HomePage;
+import com.pferreyra.app.pages.ListadoResultados;
 
-
-
-class BuscarProducto {
-
+class FiltrarProductos {
   WebDriver driver;
   HomePage busquedaProducto;
+  ListadoResultados filtradoProducto;
 
   @BeforeEach
   void setUp() throws Exception {
@@ -30,11 +29,14 @@ class BuscarProducto {
   }
 
   @Test
-  public void testBusqueda() throws InterruptedException {
+  void testFiltrado() {
     busquedaProducto = new HomePage(driver);
     busquedaProducto.ingresarSitio();
     String busqueda = "Notebook";
     busquedaProducto.ingresarBusqueda(busqueda);
+    filtradoProducto = new ListadoResultados(driver);
+    String filtroAplicado = filtradoProducto.seleccionarFiltro();
+    System.out.println(filtroAplicado);
   }
 
 }
