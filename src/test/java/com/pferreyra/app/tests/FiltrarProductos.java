@@ -26,6 +26,7 @@ class FiltrarProductos {
 
   @AfterEach
   void tearDown() throws Exception {
+    driver.quit();
   }
 
   @Test
