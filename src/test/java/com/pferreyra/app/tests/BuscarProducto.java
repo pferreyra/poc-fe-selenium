@@ -1,5 +1,8 @@
 package com.pferreyra.app.tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
@@ -19,7 +22,7 @@ class BuscarProducto {
 
   @BeforeEach
   void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver", "//Users//paulaferreyra//Java//Repositorios//Selenium//geckodriver");
+    System.setProperty("webdriver.gecko.driver", "C:\\Users\\paula.ferreyra\\eclipse-workspace\\selenium\\geckodriver.exe");
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.manage().window().maximize();
@@ -27,14 +30,16 @@ class BuscarProducto {
 
   @AfterEach
   void tearDown() throws Exception {
-  }
+	    driver.quit();
+	  }
 
   @Test
   public void testBusqueda() throws InterruptedException {
     busquedaProducto = new HomePage(driver);
     busquedaProducto.ingresarSitio();
-    String busqueda = "Notebook";
-    busquedaProducto.ingresarBusqueda(busqueda);
+    String busqueda = "notebook";
+    String busquedaAplicada = busquedaProducto.ingresarBusqueda(busqueda);
+    assertEquals(busqueda, busquedaAplicada, "La búsqueda aplicada es diferente de la especificada");
   }
 
 }

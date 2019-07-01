@@ -9,6 +9,7 @@ public class HomePage {
   private final String url = "https://www.mercadolibre.com.ar/";
   private By buscar = By.name("as_word");
   private By botonBuscar = By.className("nav-search-btn");
+  private By tituloFiltro = By.className("breadcrumb__title");
 
 
   public HomePage (WebDriver driver){
@@ -26,9 +27,11 @@ public class HomePage {
    * Ingresar una búsqueda de producto
    * @param busqueda texto del producto a buscar
    */
-  public void ingresarBusqueda (String busqueda) {
+  public String ingresarBusqueda (String busqueda) {
     driver.findElement(buscar).sendKeys(busqueda);
     driver.findElement(botonBuscar).click();
+    String busquedaAplicada = driver.findElement(tituloFiltro).getText();
+    return (busquedaAplicada);
   }
 
 

@@ -18,7 +18,7 @@ class FiltrarProductos {
 
   @BeforeEach
   void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver", "//Users//paulaferreyra//Java//Repositorios//Selenium//geckodriver");
+    System.setProperty("webdriver.gecko.driver", "C:\\Users\\paula.ferreyra\\eclipse-workspace\\selenium\\geckodriver.exe");
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.manage().window().maximize();
@@ -30,7 +30,7 @@ class FiltrarProductos {
   }
 
   @Test
-  void testFiltrado() {
+  void testFiltrado() throws InterruptedException {
     busquedaProducto = new HomePage(driver);
     busquedaProducto.ingresarSitio();
     String busqueda = "Notebook";
@@ -38,6 +38,8 @@ class FiltrarProductos {
     filtradoProducto = new ListadoResultados(driver);
     String filtroAplicado = filtradoProducto.seleccionarFiltro();
     System.out.println(filtroAplicado);
+	Thread.sleep(2000);
+    
   }
 
 }
