@@ -34,9 +34,4 @@ public class HomePage {
     return (busquedaAplicada);
   }
 
-
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
-
-  }
 }

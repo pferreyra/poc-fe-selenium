@@ -1,5 +1,7 @@
 package com.pferreyra.app.tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
@@ -37,7 +39,8 @@ class FiltrarProductos {
     busquedaProducto.ingresarBusqueda(busqueda);
     filtradoProducto = new ListadoResultados(driver);
     String filtroAplicado = filtradoProducto.seleccionarFiltro();
-    System.out.println(filtroAplicado);
+    String tituloFiltroAplicado = filtradoProducto.tituloFiltroAplicado();
+    assertEquals(filtroAplicado, tituloFiltroAplicado, "El filtro aplicado es diferente al especificado");
 	Thread.sleep(2000);
     
   }
