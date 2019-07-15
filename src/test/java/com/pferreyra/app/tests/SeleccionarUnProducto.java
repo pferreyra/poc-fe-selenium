@@ -4,9 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -39,12 +37,20 @@ class SeleccionarUnProducto {
 	public void testSeleccionarProducto() {
 	    busquedaProducto = new HomePage(driver);
 	    busquedaProducto.ingresarSitio();
+	    String busqueda = "notebook";
+	    busquedaProducto.ingresarBusqueda(busqueda);
+	    filtradoProducto = new ListadoResultados(driver);
 		String tituloProducto = filtradoProducto.seleccionarPrimerItem();
 		if (tituloProducto == null) {
 			System.out.println("No hay productos listados");
 		}
-		detalleProducto = new ListadoResultados(driver);
+		else {
+		detalleProducto = new VistaProducto(driver);
+		String tituloObtenido = detalleProducto.ProductoPreview();
+		assertEquals(tituloProducto, tituloObtenido, "El título del item seleccionado no es el mismo del obtenido");
+		}
 		
 	}
+	
 
 }

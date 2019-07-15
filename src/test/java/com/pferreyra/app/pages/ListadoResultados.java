@@ -42,7 +42,7 @@ public class ListadoResultados {
 	    items = driver.findElements(item);
 	    int listadoSize = items.size();
 	    String itemTitulo = null;
-	    if (listadoSize>0) {
+	    if (listadoSize > 0) {
 	    	itemTitulo = items.get(0).getText();
 	    	items.get(0).click();
 	    }

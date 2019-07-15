@@ -35,7 +35,7 @@ class FiltrarProductos {
   void testFiltrado() throws InterruptedException {
     busquedaProducto = new HomePage(driver);
     busquedaProducto.ingresarSitio();
-    String busqueda = "Notebook";
+    String busqueda = "notebook";
     busquedaProducto.ingresarBusqueda(busqueda);
     filtradoProducto = new ListadoResultados(driver);
     String filtroAplicado = filtradoProducto.seleccionarFiltro();
