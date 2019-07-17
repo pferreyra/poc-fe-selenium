@@ -2,26 +2,27 @@ package com.pferreyra.app.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import helpers.*;
 
 
-public class HomePage {
-  private WebDriver driver;
-  private final String url = "https://www.mercadolibre.com.ar/";
+public class HomePage extends BasePage{
+//  private WebDriver driver;
+//  private final String url = "https://www.mercadolibre.com.ar/";
   private By buscar = By.name("as_word");
   private By botonBuscar = By.className("nav-search-btn");
   private By tituloFiltro = By.className("breadcrumb__title");
 
 
   public HomePage (WebDriver driver){
-    this.driver = driver;
+	  super(driver);
   }
 
   /**
    * Ingresar a la página
    */
-  public void ingresarSitio () {
-    driver.get(url);
-  }
+//  public void ingresarSitio () {
+//    driver.get(url);
+//  }
 
   /**
    * Ingresar una búsqueda de producto
