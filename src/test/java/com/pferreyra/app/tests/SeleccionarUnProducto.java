@@ -22,8 +22,9 @@ class SeleccionarUnProducto {
 
 	@BeforeEach
 	  void setUp() throws Exception {
-	    System.setProperty("webdriver.gecko.driver", "C:\\Users\\paula.ferreyra\\eclipse-workspace\\selenium\\geckodriver.exe");
-	    driver = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver",
+				"//Users//paulaferreyra//eclipse-workspace//selenium//geckodriver");
+		driver = new FirefoxDriver();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    driver.manage().window().maximize();
 	  }
@@ -36,7 +37,6 @@ class SeleccionarUnProducto {
 	@Test
 	public void testSeleccionarProducto() {
 	    busquedaProducto = new HomePage(driver);
-	    busquedaProducto.ingresarSitio();
 	    String busqueda = "notebook";
 	    busquedaProducto.ingresarBusqueda(busqueda);
 	    filtradoProducto = new ListadoResultados(driver);
