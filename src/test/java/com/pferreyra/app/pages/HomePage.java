@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import helpers.*;
 
 public class HomePage extends BasePage {
-//  private WebDriver driver;
-//  private final String url = "https://www.mercadolibre.com.ar/";
 	private By buscar = By.name("as_word");
 	private By botonBuscar = By.className("nav-search-btn");
 	private By tituloFiltro = By.className("breadcrumb__title");
@@ -22,13 +20,9 @@ public class HomePage extends BasePage {
 		}
 	}
 
-	/**
-	 * Ingresar a la página
-	 */
-//  public void ingresarSitio () {
-//    driver.get(url);
-//  }
-
+//	public void HomePageSetUp() throws Exception {
+//		setUp();
+//	}
 	/**
 	 * Ingresar una búsqueda de producto
 	 * 

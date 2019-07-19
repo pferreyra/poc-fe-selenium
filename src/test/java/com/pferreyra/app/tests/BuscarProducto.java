@@ -20,12 +20,10 @@ class BuscarProducto {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.setProperty("webdriver.gecko.driver",
-				"//Users//paulaferreyra//eclipse-workspace//selenium//geckodriver");
+				"C:\\Users\\paula.ferreyra\\eclipse-workspace\\selenium\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
 	}
-
+	
 	@AfterEach
 	void tearDown() throws Exception {
 		driver.quit();
