@@ -15,7 +15,7 @@ public class HomePage extends BasePage {
 		this.driver = driver;
 		ingresarSitio();
 		String currentURL = driver.getCurrentUrl();
-		if (!url.equals(currentURL)) {
+		if (!baseUrl.equals(currentURL)) {
 			System.out.println("El sitio ingresado es incorrecto, el sitio es: " + currentURL);
 		}
 	}

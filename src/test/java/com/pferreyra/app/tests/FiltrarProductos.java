@@ -21,10 +21,8 @@ class FiltrarProductos {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.setProperty("webdriver.gecko.driver",
-				"//Users//paulaferreyra//eclipse-workspace//selenium//geckodriver");
+				"C:\\Users\\paula.ferreyra\\eclipse-workspace\\selenium\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
 	}
 
 	@AfterEach
@@ -38,10 +36,14 @@ class FiltrarProductos {
 		String busqueda = "notebook";
 		busquedaProducto.ingresarBusqueda(busqueda);
 		filtradoProducto = new ListadoResultados(driver);
-		String filtroAplicado = filtradoProducto.seleccionarFiltro();
-		String tituloFiltroAplicado = filtradoProducto.tituloFiltroAplicado();
-		assertEquals(filtroAplicado, tituloFiltroAplicado, "El filtro aplicado es diferente al especificado");
-		Thread.sleep(2000);
+		int cantidadDeFiltros = filtradoProducto.tamañoListado();
+		for (int i=0; i<=cantidadDeFiltros; i++) {
+			String filtroAplicado = filtradoProducto.seleccionarFiltro(i);
+			String tituloFiltroAplicado = filtradoProducto.tituloFiltroAplicado();
+			//TODO Poner en el basePage un método para volver
+			assertEquals(filtroAplicado, tituloFiltroAplicado, "El filtro aplicado es diferente al especificado");
+		}
+
 
 	}
 

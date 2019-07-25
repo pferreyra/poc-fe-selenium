@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BasePage {
 
 	private WebDriver driver;
-	protected final String url = "https://www.mercadolibre.com.ar/";
+	protected final String baseUrl = "https://www.mercadolibre.com.ar/";
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -17,7 +17,7 @@ public class BasePage {
 	}
 
 	public void ingresarSitio() {
-		driver.get(url);
+		driver.get(baseUrl);
 	}
 
 	public WebDriver getDriver() {

@@ -14,24 +14,33 @@ public class ListadoResultados {
   private By filtroAplicado = By.className("applied-fliter");
   private List<WebElement> items;
   private By item = By.className("main-title");
-
+  private int i;
+  
   public ListadoResultados(WebDriver driver) {
     this.driver = driver;
   }
 
-  public String seleccionarFiltro() {
+  public int tamañoListado() {
     listado = driver.findElements(filtro);
     int listadoSize = listado.size();
-    int randomFiltro;
-    do {
-      randomFiltro = ThreadLocalRandom.current().nextInt(listadoSize);
-    } while (!listado.get(randomFiltro).isDisplayed());
-    String titulo = listado.get(randomFiltro).getAttribute("Title");
-    listado.get(randomFiltro).click();
-    return titulo;
-    // TODO Agregar para ver si el filtro es clickeable
+    return listadoSize;
   }
   
+  public String seleccionarFiltro(int i) {
+//    do {
+//    randomFiltro = ThreadLocalRandom.current().nextInt(listadoSize);
+//  } while (!listado.get(randomFiltro).isDisplayed());
+	  this.i = i;
+  	if (listado.get(i).isDisplayed()) {
+  	    String titulo = listado.get(i).getAttribute("Title");
+  	    listado.get(i).click();
+  	    return titulo;
+  	} else {
+  		return null;
+  	}
+
+  }
+   
   public String tituloFiltroAplicado () {
 	    String tituloAplicado = driver.findElement(filtroAplicado).getText();
 	    System.out.println(tituloAplicado);
