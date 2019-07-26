@@ -11,6 +11,7 @@
   <properties>
   	<junit.version>5.5.0</junit.version>
   	<selenium.version>3.14.0</selenium.version>
+  	<log4j.version>2.12.0</log4j.version>
   </properties>
   
   <dependencies>
@@ -47,6 +48,16 @@
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-api</artifactId>
 	    <version>${selenium.version}</version>
-	  </dependency> 
+	</dependency> 
+	<dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-core</artifactId>
+    	<version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-api</artifactId>
+    	<version>${log4j.version}</version>
+	</dependency>
   </dependencies>
 </project>

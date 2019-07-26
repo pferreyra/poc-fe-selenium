@@ -2,12 +2,14 @@ package com.pferreyra.app.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.pferreyra.app.pages.HomePage;
@@ -36,14 +38,17 @@ class FiltrarProductos {
 		String busqueda = "notebook";
 		busquedaProducto.ingresarBusqueda(busqueda);
 		filtradoProducto = new ListadoResultados(driver);
-		int cantidadDeFiltros = filtradoProducto.tamañoListado();
-		for (int i=0; i<=cantidadDeFiltros; i++) {
+		int cantidadDeFiltros = filtradoProducto.filtrosListados();
+		for (int i = 0; i <= cantidadDeFiltros; i++) {
 			String filtroAplicado = filtradoProducto.seleccionarFiltro(i);
-			String tituloFiltroAplicado = filtradoProducto.tituloFiltroAplicado();
-			//TODO Poner en el basePage un método para volver
+			String tituloFiltroAplicado;
+			if (filtroAplicado == null) {
+				tituloFiltroAplicado = null;
+			} else {
+				tituloFiltroAplicado = filtradoProducto.tituloFiltroAplicado();
+			}
 			assertEquals(filtroAplicado, tituloFiltroAplicado, "El filtro aplicado es diferente al especificado");
 		}
-
 
 	}
 

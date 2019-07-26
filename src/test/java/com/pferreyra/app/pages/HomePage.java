@@ -9,6 +9,7 @@ public class HomePage extends BasePage {
 	private By botonBuscar = By.className("nav-search-btn");
 	private By tituloFiltro = By.className("breadcrumb__title");
 	protected WebDriver driver;
+	//TODO pasar todo a pagefactory
 
 	public HomePage(WebDriver driver) {
 		super(driver);

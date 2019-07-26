@@ -24,6 +24,10 @@ public class BasePage {
 		return driver;
 	}
 	
+	public void ingresarPagina(String subDominio) {
+		driver.get(baseUrl + subDominio);
+	}
+	
 //	protected void setUp() throws Exception {
 //		System.setProperty("webdriver.gecko.driver",
 //				"//Users//paulaferreyra//eclipse-workspace//selenium//geckodriver");

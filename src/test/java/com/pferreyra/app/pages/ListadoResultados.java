@@ -20,7 +20,7 @@ public class ListadoResultados {
     this.driver = driver;
   }
 
-  public int tamañoListado() {
+  public int filtrosListados() {
     listado = driver.findElements(filtro);
     int listadoSize = listado.size();
     return listadoSize;
@@ -31,6 +31,7 @@ public class ListadoResultados {
 //    randomFiltro = ThreadLocalRandom.current().nextInt(listadoSize);
 //  } while (!listado.get(randomFiltro).isDisplayed());
 	  this.i = i;
+	  this.listado = driver.findElements(filtro);
   	if (listado.get(i).isDisplayed()) {
   	    String titulo = listado.get(i).getAttribute("Title");
   	    listado.get(i).click();
@@ -40,10 +41,11 @@ public class ListadoResultados {
   	}
 
   }
-   
+  
   public String tituloFiltroAplicado () {
 	    String tituloAplicado = driver.findElement(filtroAplicado).getText();
 	    System.out.println(tituloAplicado);
+	    driver.navigate().back();
 	    return (tituloAplicado);
 	  }
   
