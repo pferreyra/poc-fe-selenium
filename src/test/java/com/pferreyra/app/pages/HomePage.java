@@ -2,7 +2,8 @@ package com.pferreyra.app.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import helpers.*;
+
+import com.pferreyra.app.helpers.*;
 
 public class HomePage extends BasePage {
 	private By buscar = By.name("as_word");

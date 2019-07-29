@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.pferreyra.app.pages.HomePage;
 import com.pferreyra.app.pages.ListadoResultados;
 
-class FiltrarProductos {
+public class FiltrarProductos {
 	WebDriver driver;
 	HomePage busquedaProducto;
 	ListadoResultados filtradoProducto;

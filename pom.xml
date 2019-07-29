@@ -12,7 +12,9 @@
   	<junit.version>5.5.0</junit.version>
   	<selenium.version>3.14.0</selenium.version>
   	<log4j.version>2.12.0</log4j.version>
+  	<runSuite>**/CompraTestSuite.class</runSuite>	
   </properties>
+
   
   <dependencies>
     <dependency>
@@ -33,6 +35,12 @@
       <version>1.5.0</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.junit.platform</groupId>
+    	<artifactId>junit-platform-runner</artifactId>
+    	<version>1.5.1</version>
+    	<scope>test</scope>
+	</dependency> 
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>

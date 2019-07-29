@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.pferreyra.app.pages.HomePage;
 
-class BuscarProducto {
+public class BuscarProducto {
 
 	WebDriver driver;
 	HomePage busquedaProducto;

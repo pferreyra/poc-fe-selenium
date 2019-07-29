@@ -14,7 +14,7 @@ import com.pferreyra.app.pages.HomePage;
 import com.pferreyra.app.pages.ListadoResultados;
 import com.pferreyra.app.pages.VistaProducto;
 
-class SeleccionarUnProducto {
+public class SeleccionarUnProducto {
 	  WebDriver driver;
 	  ListadoResultados filtradoProducto;
 	  HomePage busquedaProducto;
