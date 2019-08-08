@@ -42,6 +42,7 @@ class IngresarAlCheckout {
 			}
 			else {
 			detalleProducto = new VistaProducto(driver);
+			detalleProducto.IngresarAlCheckout();
 			}
 	}
 
