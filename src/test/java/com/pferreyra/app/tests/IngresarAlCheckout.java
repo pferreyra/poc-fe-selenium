@@ -26,6 +26,7 @@ class IngresarAlCheckout {
 	  }
 	@AfterEach
 	void tearDown() throws Exception {
+		driver.quit();
 	}
 
 	@Test
@@ -42,7 +43,7 @@ class IngresarAlCheckout {
 			else {
 			detalleProducto = new VistaProducto(driver);
 			detalleProducto.IngresarAlCheckout();
-			loginCheckout = new LoginCheckout();
+			loginCheckout = new LoginCheckout(driver);
 			String tituloLogin = loginCheckout.TituloSinLogin();
 			assertEquals(tituloEsperadoLogin, tituloLogin, "El título del Login en el Checkout no es correcto");
 			}
