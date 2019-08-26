@@ -28,11 +28,4 @@ public class BasePage {
 		driver.get(baseUrl + subDominio);
 	}
 	
-//	protected void setUp() throws Exception {
-//		System.setProperty("webdriver.gecko.driver",
-//				"//Users//paulaferreyra//eclipse-workspace//selenium//geckodriver");
-//		driver = new FirefoxDriver();
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
-//	}
 }
